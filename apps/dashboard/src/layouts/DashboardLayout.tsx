@@ -159,7 +159,16 @@ export default function DashboardLayout() {
                 <span>Downloads</span>
               </UnstyledButton>
             </Indicator>
-            <Divider my={20} />
+            <Divider
+              my={20}
+              sx={(theme) => ({
+                borderTop: `1px solid ${
+                  theme.colorScheme === "dark"
+                    ? theme.colors.dark[4]
+                    : theme.colors.gray[2]
+                }`,
+              })}
+            />
             <UnstyledButton className={classes.linkLogout} onClick={logout}>
               {/* <IconLogout className={classes.linkIconLogout} stroke={1.5} /> */}
               <span>Logout</span>

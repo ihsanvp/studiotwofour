@@ -6,6 +6,8 @@ import LoginRoute from "./routes/LoginRoute";
 import ProtectedLayout from "./layouts/ProtectedLayout";
 import DashboardLayout from "./layouts/DashboardLayout";
 import AUTH from "./configs/auth";
+import AssetsLayout from "./layouts/AssetsLayout";
+import AssetsRoute from "./routes/AssetsRoute";
 
 function App() {
   return (
@@ -13,9 +15,12 @@ function App() {
       <BrowserRouter>
         <MantineProvider withGlobalStyles withNormalizeCSS>
           <Routes>
-            <Route path="" element={<ProtectedLayout loginPath="/login" />}>
-              <Route path="" element={<DashboardLayout />}>
+            <Route element={<ProtectedLayout loginPath="/login" />}>
+              <Route element={<DashboardLayout />}>
                 <Route index element={<HomeRoute />} />
+                <Route path="assets" element={<AssetsLayout />}>
+                  <Route path="" element={<AssetsRoute />} />
+                </Route>
               </Route>
             </Route>
             <Route path="login" element={<LoginRoute />} />
