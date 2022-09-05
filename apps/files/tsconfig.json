@@ -1,0 +1,10 @@
+{
+  "extends": "tsconfig/node16.json",
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/app-env.d.ts"],
+  "exclude": ["node_modules", "dist", "prisma"],
+  "compilerOptions": {
+    "module": "CommonJS",
+    "declaration": false,
+    "declarationMap": false
+  }
+}
