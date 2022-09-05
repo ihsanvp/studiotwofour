@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useAuthHeader } from "react-auth-kit";
 import AUTH from "../configs/auth";
 
 const http = axios.create({

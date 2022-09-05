@@ -10,27 +10,27 @@ import {
 } from "@mantine/core";
 import { Outlet } from "react-router-dom";
 import useLogout from "../hooks/useLogout";
-// import {
-//   IconBellRinging,
-//   IconSettings,
-//   IconLogout,
-//   IconSmartHome,
-//   IconFiles,
-//   IconCloudUpload,
-//   IconDownload,
-//   IconAd,
-//   IconArchive,
-// } from "@tabler/icons";
+import {
+  IconBellRinging,
+  IconSettings,
+  IconLogout,
+  IconSmartHome,
+  IconFiles,
+  IconCloudUpload,
+  IconDownload,
+  IconAd,
+  IconArchive,
+} from "@tabler/icons";
 // import { MantineLogo } from "@mantine/ds";
-// import NavbarButton from "components/Navbar/NavbarButton";
+import NavbarButton from "../components/NavbarButton";
 
 const data: any[] = [
-  // { link: "/", label: "Dashboard", icon: IconSmartHome },
-  // { link: "/assets", label: "Assets", icon: IconFiles },
-  // { link: "", label: "Banners", icon: IconAd },
-  // { link: "", label: "Projects", icon: IconArchive },
-  // { link: "", label: "Notifications", icon: IconBellRinging },
-  // { link: "", label: "Settings", icon: IconSettings },
+  { link: "/", label: "Dashboard", icon: IconSmartHome },
+  { link: "/assets", label: "Assets", icon: IconFiles },
+  { link: "/banners", label: "Banners", icon: IconAd },
+  { link: "/projects", label: "Projects", icon: IconArchive },
+  { link: "/notifications", label: "Notifications", icon: IconBellRinging },
+  { link: "/settings", label: "Settings", icon: IconSettings },
 ];
 
 const useStyles = createStyles((theme, _params, getRef) => {
@@ -136,14 +136,14 @@ export default function DashboardLayout() {
               {/* <MantineLogo size={28} /> */}
               <Code sx={{ fontWeight: 700 }}>v3.1.2</Code>
             </Group>
-            {/* {data.map((item) => (
+            {data.map((item) => (
               <NavbarButton
                 key={item.label}
                 href={item.link}
                 icon={item.icon}
                 label={item.label}
               />
-            ))} */}
+            ))}
           </Navbar.Section>
 
           <Navbar.Section className={classes.footer}>
