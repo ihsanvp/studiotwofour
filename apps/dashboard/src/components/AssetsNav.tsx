@@ -21,6 +21,7 @@ import {
 // import { useUploadFiles } from "features/AssetUpload/upload.hookst";
 import AssetActivityGroup from "./AssetActivityGroup";
 import AssetsCategoryInfo from "./AssetsCategoryInfo";
+import AssetsUpload from "./AssetsUpload";
 // import AssetsCategoryInfo from "./AssetsCategoryInfo";
 // import AssetsUpload from "./AssetsUpload";
 // import AssetUploadCard from "./AssetUploadCard";
@@ -149,7 +150,7 @@ function UploadSection(props: UploadSectionProps) {
   return (
     <Stack style={{ height: "100%", overflow: "hidden" }} spacing={30}>
       <Box px={20} pt={20}>
-        {/* <AssetsUpload /> */}
+        <AssetsUpload />
       </Box>
       {props.files.length ? (
         <Stack style={{ height: "100%", overflow: "hidden" }}>
@@ -213,6 +214,54 @@ function ActivitySection() {
               },
               {
                 url: "",
+              },
+            ]}
+          />
+        </Timeline.Item>
+        <Timeline.Item title="3 days ago">
+          <AssetActivityGroup
+            assets={[
+              {
+                url: "https://images.unsplash.com/photo-1659697067461-f9604d8f9898?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0OHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+              },
+              {
+                url: "https://images.unsplash.com/photo-1659778059522-d280d965fde8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1M3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+              },
+            ]}
+          />
+        </Timeline.Item>
+        <Timeline.Item title="3 days ago">
+          <AssetActivityGroup
+            assets={[
+              {
+                url: "https://images.unsplash.com/photo-1659697067461-f9604d8f9898?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0OHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+              },
+              {
+                url: "https://images.unsplash.com/photo-1659778059522-d280d965fde8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1M3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+              },
+            ]}
+          />
+        </Timeline.Item>
+        <Timeline.Item title="3 days ago">
+          <AssetActivityGroup
+            assets={[
+              {
+                url: "https://images.unsplash.com/photo-1659697067461-f9604d8f9898?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0OHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+              },
+              {
+                url: "https://images.unsplash.com/photo-1659778059522-d280d965fde8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1M3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+              },
+            ]}
+          />
+        </Timeline.Item>
+        <Timeline.Item title="3 days ago">
+          <AssetActivityGroup
+            assets={[
+              {
+                url: "https://images.unsplash.com/photo-1659697067461-f9604d8f9898?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0OHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+              },
+              {
+                url: "https://images.unsplash.com/photo-1659778059522-d280d965fde8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1M3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
               },
             ]}
           />
