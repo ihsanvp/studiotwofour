@@ -9,8 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@mantine/core": "^5.2.5",
+    "@mantine/form": "^5.2.5",
+    "@mantine/hooks": "^5.2.5",
+    "axios": "^0.27.2",
+    "radash": "^7.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-auth-kit": "^2.1.1",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

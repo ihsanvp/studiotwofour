@@ -24,4 +24,6 @@ Route.get("/", async () => {
   return { hello: "world" };
 }).middleware("auth:api");
 
-Route.get("assets", "AssetsController.index");
+Route.get("/assets", "AssetsController.index");
+
+Route.post("/auth/login", "AuthController.login");
