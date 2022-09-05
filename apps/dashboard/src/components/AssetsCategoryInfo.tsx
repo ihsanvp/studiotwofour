@@ -1,5 +1,5 @@
 import { Box, Group, ThemeIcon, Text, MantineColor } from "@mantine/core";
-import { IconFileInvoice, TablerIcon } from "@tabler/icons";
+import { TablerIcon } from "@tabler/icons";
 
 interface Props {
   icon: TablerIcon;

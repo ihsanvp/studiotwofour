@@ -1,7 +1,6 @@
 import {
   Center,
   Divider,
-  Navbar,
   Stack,
   Tabs,
   Text,
@@ -11,10 +10,6 @@ import {
   RingProgress,
   MantineColor,
   Timeline,
-  Group,
-  Avatar,
-  SimpleGrid,
-  Grid,
 } from "@mantine/core";
 import {
   IconFile,
@@ -24,7 +19,6 @@ import {
   IconVideo,
 } from "@tabler/icons";
 // import { useUploadFiles } from "features/AssetUpload/upload.hookst";
-import { Fragment } from "react";
 import AssetActivityGroup from "./AssetActivityGroup";
 import AssetsCategoryInfo from "./AssetsCategoryInfo";
 // import AssetsCategoryInfo from "./AssetsCategoryInfo";

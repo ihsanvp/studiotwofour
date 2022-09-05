@@ -54,7 +54,6 @@ function AssetDisplay(props: AssetDisplayProps) {
           objectFit: "cover",
         }}
       />
-      {/* <Image layout="fill" objectFit="cover" src={props.url} alt="" /> */}
       {props.extra ? (
         <Box
           style={{
