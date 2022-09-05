@@ -24,7 +24,13 @@ import Route from "@ioc:Adonis/Core/Route";
 Route.get("/", "RootController.index");
 
 // Assets
-Route.get("/assets", "AssetsController.index");
+Route.group(() => {
+  Route.get("/", "AssetsController.index");
+})
+  .prefix("/assets")
+  .middleware("auth:api");
 
 // Auth
-Route.post("/auth/login", "AuthController.login");
+Route.group(() => {
+  Route.post("/login", "AuthController.login");
+}).prefix("/auth");
