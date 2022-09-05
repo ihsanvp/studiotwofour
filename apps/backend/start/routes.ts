@@ -20,10 +20,11 @@
 
 import Route from "@ioc:Adonis/Core/Route";
 
-Route.get("/", async () => {
-  return { hello: "world" };
-}).middleware("auth:api");
+// Root
+Route.get("/", "RootController.index");
 
+// Assets
 Route.get("/assets", "AssetsController.index");
 
+// Auth
 Route.post("/auth/login", "AuthController.login");
