@@ -2,7 +2,7 @@ import { useSignIn } from "react-auth-kit";
 import { tryit } from "radash";
 import api from "../api";
 
-interface LoginParams {
+interface Params {
   email: string;
   password: string;
 }
@@ -15,7 +15,7 @@ function getExpiresIn(expiresAt: string) {
 export default function useLogin() {
   const signIn = useSignIn();
 
-  return async (params: LoginParams) => {
+  return async (params: Params) => {
     const request = tryit(api.getAuthToken);
     const [err, data] = await request(params.email, params.password);
 
