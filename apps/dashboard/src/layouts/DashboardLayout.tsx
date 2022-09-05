@@ -8,8 +8,8 @@ import {
   Indicator,
   Divider,
 } from "@mantine/core";
-import { useSignOut } from "react-auth-kit";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import useLogout from "../hooks/useLogout";
 // import {
 //   IconBellRinging,
 //   IconSettings,
@@ -124,8 +124,7 @@ const useStyles = createStyles((theme, _params, getRef) => {
 });
 
 export default function DashboardLayout() {
-  const signOut = useSignOut();
-  const navigate = useNavigate();
+  const logout = useLogout();
   const { classes } = useStyles();
 
   return (
@@ -161,13 +160,7 @@ export default function DashboardLayout() {
               </UnstyledButton>
             </Indicator>
             <Divider my={20} />
-            <UnstyledButton
-              className={classes.linkLogout}
-              onClick={() => {
-                signOut();
-                navigate("/login");
-              }}
-            >
+            <UnstyledButton className={classes.linkLogout} onClick={logout}>
               {/* <IconLogout className={classes.linkIconLogout} stroke={1.5} /> */}
               <span>Logout</span>
             </UnstyledButton>

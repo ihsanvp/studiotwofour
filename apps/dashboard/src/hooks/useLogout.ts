@@ -4,10 +4,12 @@ import api from "../api";
 import { useNavigate } from "react-router-dom";
 
 interface Options {
-  loginPath: string;
+  loginPath?: string;
 }
 
-export default function useLogout(options: Options) {
+export default function useLogout(options: Options = {}) {
+  const loginPath = options.loginPath || "/login";
+
   const signOut = useSignOut();
   const navigate = useNavigate();
 
@@ -20,6 +22,6 @@ export default function useLogout(options: Options) {
     }
 
     signOut();
-    navigate(options.loginPath);
+    navigate(loginPath);
   };
 }

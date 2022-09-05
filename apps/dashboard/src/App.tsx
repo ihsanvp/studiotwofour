@@ -5,10 +5,11 @@ import HomeRoute from "./routes/HomeRoute";
 import LoginRoute from "./routes/LoginRoute";
 import ProtectedLayout from "./layouts/ProtectedLayout";
 import DashboardLayout from "./layouts/DashboardLayout";
+import AUTH from "./configs/auth";
 
 function App() {
   return (
-    <AuthProvider authType="localstorage" authName="_auth">
+    <AuthProvider authType="localstorage" authName={AUTH.key}>
       <BrowserRouter>
         <MantineProvider withGlobalStyles withNormalizeCSS>
           <Routes>
