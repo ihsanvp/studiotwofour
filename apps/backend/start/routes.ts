@@ -33,4 +33,5 @@ Route.group(() => {
 // Auth
 Route.group(() => {
   Route.post("/login", "AuthController.login");
+  Route.post("/logout", "AuthController.logout").middleware("auth:api");
 }).prefix("/auth");
