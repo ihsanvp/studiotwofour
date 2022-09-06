@@ -1,6 +1,6 @@
 import { Box, Group, ScrollArea } from "@mantine/core";
 import { Outlet } from "react-router-dom";
-import AssetsNav from "../components/AssetsNav";
+import AssetsSidebar from "../components/AssetsSidebar/Sidebar";
 
 export default function AssetsLayout() {
   return (
@@ -17,7 +17,7 @@ export default function AssetsLayout() {
           <Outlet />
         </ScrollArea>
       </Box>
-      <AssetsNav width={400} />
+      <AssetsSidebar width={400} />
     </Group>
   );
 }
