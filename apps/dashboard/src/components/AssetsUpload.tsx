@@ -7,6 +7,7 @@ import {
   IconDownload,
   IconAlertTriangle,
 } from "@tabler/icons";
+import api from "../api";
 // import { useUpload } from "features/AssetUpload/upload.hookst";
 // import { openUploadModal } from "components/Modals/UploadsModal";
 // import useAppNotification from "hooks/useAppNotification";
@@ -47,9 +48,14 @@ export default function AssetsUpload() {
     <div className={classes.wrapper}>
       <Dropzone
         openRef={openRef}
-        onDrop={(files) => {
+        onDrop={async (files) => {
           // upload(files);
           // openUploadModal();
+          if (files.length) {
+            await api.uploadFile({
+              file: files[0],
+            });
+          }
         }}
         onReject={(rejections) => {
           rejections.forEach((err) => {
