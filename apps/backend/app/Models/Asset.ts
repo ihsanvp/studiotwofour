@@ -1,9 +1,12 @@
 import { DateTime } from "luxon";
-import { BaseModel, column } from "@ioc:Adonis/Lucid/Orm";
+import { BaseModel, beforeCreate, column } from "@ioc:Adonis/Lucid/Orm";
+import { v4 as uuid } from "uuid";
 
 export default class Asset extends BaseModel {
+  public static selfAssignPrimaryKey = true;
+
   @column({ isPrimary: true })
-  public id: number;
+  public id: string;
 
   @column()
   public name: string;
@@ -12,7 +15,7 @@ export default class Asset extends BaseModel {
   public path: string;
 
   @column()
-  public mime: string;
+  public type: string;
 
   @column()
   public size: number;
@@ -22,4 +25,9 @@ export default class Asset extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime;
+
+  @beforeCreate()
+  public static async assignUuid(model: Asset) {
+    model.id = uuid();
+  }
 }

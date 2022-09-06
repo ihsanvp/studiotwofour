@@ -26,6 +26,7 @@ Route.get("/", "RootController.index");
 // Assets
 Route.group(() => {
   Route.get("/", "AssetsController.index");
+  Route.post("/upload", "AssetsController.upload");
 })
   .prefix("/assets")
   .middleware("auth:api");
