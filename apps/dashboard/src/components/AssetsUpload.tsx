@@ -8,7 +8,7 @@ import {
   IconAlertTriangle,
 } from "@tabler/icons";
 import api from "../api";
-// import { useUpload } from "features/AssetUpload/upload.hookst";
+import useUploadManager from "../hooks/useUploadManager";
 // import { openUploadModal } from "components/Modals/UploadsModal";
 // import useAppNotification from "hooks/useAppNotification";
 
@@ -41,21 +41,16 @@ const useStyles = createStyles((theme) => ({
 export default function AssetsUpload() {
   const { classes, theme } = useStyles();
   const openRef = useRef<() => void>(null);
+  const manager = useUploadManager();
   // const showNotification = useAppNotification("error");
-  // const { upload } = useUpload();
 
   return (
     <div className={classes.wrapper}>
       <Dropzone
         openRef={openRef}
         onDrop={async (files) => {
-          // upload(files);
+          manager.upload(files);
           // openUploadModal();
-          if (files.length) {
-            await api.uploadFile({
-              file: files[0],
-            });
-          }
         }}
         onReject={(rejections) => {
           rejections.forEach((err) => {

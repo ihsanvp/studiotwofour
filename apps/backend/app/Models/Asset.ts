@@ -15,6 +15,9 @@ export default class Asset extends BaseModel {
   public path: string;
 
   @column()
+  public url: string;
+
+  @column()
   public type: string;
 
   @column()

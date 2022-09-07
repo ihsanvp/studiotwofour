@@ -10,6 +10,7 @@ export default class extends BaseSchema {
 
       table.string("name", 150);
       table.string("path", 250);
+      table.string("url", 250);
       table.string("type", 50);
       table.bigInteger("size");
 

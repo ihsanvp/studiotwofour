@@ -15,11 +15,7 @@ export default function useLogout(options: Options = {}) {
 
   return async () => {
     const request = tryit(api.revokeToken);
-    const [err, data] = await request();
-
-    if (err) {
-      return console.log(err);
-    }
+    await request();
 
     signOut();
     navigate(loginPath);

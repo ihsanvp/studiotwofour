@@ -1,6 +1,7 @@
 import type { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
 import { schema } from "@ioc:Adonis/Core/Validator";
 import Asset from "App/Models/Asset";
+import Drive from "@ioc:Adonis/Core/Drive";
 
 export default class AssetsController {
   public async index({}: HttpContextContract) {
@@ -15,15 +16,23 @@ export default class AssetsController {
     });
 
     const payload = await request.validate({ schema: uploadSchema });
-    const file = payload.file;
 
-    await file.moveToDisk("./");
+    const file = payload.file;
+    const type = file.subtype || file.type || "other";
+    const folder = `${file.type}/${file.subtype}`;
+
+    await file.moveToDisk(`./${folder}`);
+
+    const location = `${folder}/${file.fileName}`;
+    const filePath = await Drive.getUrl(location);
+    const url = request.buildAbsoluteUri(filePath);
 
     const asset = await Asset.create({
-      type: file.type,
       name: file.clientName,
       path: file.filePath,
       size: file.size,
+      type,
+      url,
     });
 
     return {
